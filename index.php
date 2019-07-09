@@ -5,7 +5,7 @@
 
   <div class="container">
 
-      <div class="row">
+      <div class="row mb-4">
 
           <!-- Blog Entries Column -->
           <div class="col-md-8">
@@ -16,22 +16,13 @@
 
               <?php 
                   
-              $args = array(
-                  'post_type' => 'post',
-                  'posts_per_page' => 10,
-                  'order'   => 'ASC',
-              );
-
-              $blogposts = new WP_Query($args);
-
-              while($blogposts->have_posts()) {
-                  $blogposts->the_post();
-              
+              while(have_posts()) {
+                  the_post();
               
               ?>
           
               <!-- Blog Post -->
-              <div class="card mb-4">
+              <div class="card mb-5">
                   <img class="card-img-top border-bottom" src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>">
                   <div class="card-body">
                       <a href="<?php the_permalink(); ?>"><h2 class="card-title"><?php the_title(); ?></h2></a>
@@ -40,6 +31,9 @@
                   </div>
                   <div class="card-footer text-muted">
                   Posted on <span class="entry-date"><?php echo get_the_date(); ?></span>
+                  
+                  <span class="post-categories"><?php echo get_the_category_list(', '); ?></span>
+                  
                   </div>
               </div>
 
@@ -47,16 +41,10 @@
                   wp_reset_query(); 
               ?>
 
-              <!-- Pagination -->
-              <ul class="pagination justify-content-center mb-4">
-                  <li class="page-item">
-                      <a class="page-link" href="#"><?php echo paginate_links(); ?>← Older</a>
-                  </li>
-                  <li class="page-item disabled">
-                      <a class="page-link" href="#"><?php echo paginate_links(); ?>Newer →</a>
-                  </li>
-              </ul>
 
+                <?php echo paginate_links(); ?>
+                
+            
           </div>
 
           <!-- Sidebar Widgets Column -->
