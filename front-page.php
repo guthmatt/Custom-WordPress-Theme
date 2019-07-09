@@ -34,10 +34,10 @@
                 'order'   => 'ASC',
             );
 
-            $blogposts = new WP_Query($args);
+            $projectposts = new WP_Query($args);
 
-            while($blogposts->have_posts()) {
-                $blogposts->the_post();
+            while($projectposts->have_posts()) {
+                $projectposts->the_post();
             
             
             ?>
@@ -70,25 +70,37 @@
     <div class="py-5">
         <div class="container">
             <h3 class="pb-4">Blog Posts</h3>
+
+            <?php 
+            
+            $args = array(
+                'post_type' => 'post',
+                'posts_per_page' => 3,
+                'order'   => 'ASC',
+            );
+
+            $blogposts = new WP_Query($args);
+
+            while($blogposts->have_posts()) {
+                $blogposts->the_post();
+            
+            
+            ?>
+
             <div class="row">
                 <div class="col">
                     <div class="mb-4">
                         <div class="">
-                            <h4 class=""><a href="./single-post.html">How to Build a Custom WordPress Theme</a></h4>
-                            <p class="">My experience building a custom theme</p>
-                        </div>
-                        <div class="">
-                            <h4 class="">How to Build a Custom WordPress Theme</h4>
-                            <p class="">My experience building a custom theme</p>
-                        </div>
-                        <div class="">
-                            <h4 class="">How to Build a Custom WordPress Theme</h4>
-                            <p class="">My experience building a custom theme</p>
+                            <a href="<?php the_permalink(); ?>"><h4 class=""><?php the_title(); ?></h4></a>
+                            <p class=""><?php echo wp_trim_words(get_the_excerpt(), 30); ?></p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <a class="" href="#">View Portfolio</a>
+            </div><?php }
+            wp_reset_query(); 
+            ?>
+
+            <a class="" href="<?php echo site_url('/blog'); ?>">View All Posts</a>
         </div>
     </div>
 
