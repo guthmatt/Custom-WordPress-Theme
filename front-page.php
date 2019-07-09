@@ -25,50 +25,46 @@
         <div class="container">
             <h3 class="pb-4">Client Work</h3>
             <div class="row">
+
+            <?php 
+            
+            $args = array(
+                'post_type' => 'project',
+                'posts_per_page' => 3,
+                'order'   => 'ASC',
+            );
+
+            $blogposts = new WP_Query($args);
+
+            while($blogposts->have_posts()) {
+                $blogposts->the_post();
+            
+            
+            ?>
+
                 <div class="col-lg-4 col-md-6">
                   <div class="card mb-4 shadow-sm">
-                    <img src="./img/hemp_cc.jpg" alt="portfolio-image" class="border-bottom" width="100%" height="225">
+                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" alt="portfolio-image" class="border-bottom" width="100%" height="225">
                         <div class="card-body">
-                            <h4 class="portfolio-title">HempCheebaChews</h4>
-                            <p class="portfolio-text">E-commerce WordPress Store</p>
+                            <a href="<?php the_permalink(); ?>"><h4 class="portfolio-title"><?php the_title(); ?></h4></a>
+                            <p class="portfolio-text"><?php the_field( "project_excerpt" ); ?></p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <a href="<?php the_permalink(); ?>" class="btn btn-sm btn-outline-secondary">View</a>
                                 </div>
                             </div>
                         </div>
                   </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card mb-4 shadow-sm">
-                        <img src="./img/hemp_cc.jpg" alt="portfolio-image" class="border-bottom" width="100%" height="225">
-                            <div class="card-body">
-                                <h4 class="portfolio-title">HempCheebaChews</h4>
-                                <p class="portfolio-text">E-commerce WordPress Store</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card mb-4 shadow-sm">
-                        <img src="./img/hemp_cc.jpg" alt="portfolio-image" class="border-bottom" width="100%" height="225">
-                            <div class="card-body">
-                                <h4 class="portfolio-title">HempCheebaChews</h4>
-                                <p class="portfolio-text">E-commerce WordPress Store</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                </div>
+
+            <?php }
+            wp_reset_query(); 
+            ?>
+
+                
+                
             </div>
-            <a class="" href="#">View Portfolio</a>
+            <a class="" href="<?php echo site_url('/portfolio'); ?>">View Portfolio</a>
         </div>
     </div>
     <div class="py-5">
