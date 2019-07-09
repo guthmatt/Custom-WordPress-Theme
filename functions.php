@@ -46,3 +46,14 @@ function cpb_widgets() {
     );
 }
 add_action( 'widgets_init', 'cpb_widgets' );
+
+
+/**
+ * search filters
+ */
+function cpb_search_filter($query) {
+  if($query->is_search()){
+    $query->set('post_type', array('post', 'portfolio'));
+  }
+}
+add_filter('pre_get_posts', 'cpb_search_filter');
