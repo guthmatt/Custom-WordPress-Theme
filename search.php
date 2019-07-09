@@ -6,13 +6,15 @@
   <div class="container">
 
       <div class="row mb-4">
-
+      
           <!-- Blog Entries Column -->
           <div class="col-md-8">
 
-              <h1 class="my-4">Page Heading
-                <small>Secondary Text</small>
-              </h1>
+            <h3 class="my-4">Search results for:
+                <?php echo get_search_query(); ?>
+            </h3>
+
+            <?php if(have_posts()) { ?>
 
               <?php 
                   
@@ -23,11 +25,11 @@
           
               <!-- Blog Post -->
               <div class="card mb-5">
-                  <img class="card-img-top border-bottom" src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>">
+                <img class="card-img-top border-bottom" src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>">
                   <div class="card-body">
                       <a href="<?php the_permalink(); ?>"><h2 class="card-title"><?php the_title(); ?></h2></a>
                           <p class="card-text"><?php echo get_the_excerpt(); ?></p>
-                          <a href="<?php the_permalink(); ?>" class="btn btn-primary">Read More →</a>
+                          <a href="<?php the_permalink(); ?>" class="btn btn-primary">View →</a>
                   </div>
                   <div class="card-footer text-muted">
                   Posted on <span class="entry-date"><?php echo get_the_date(); ?></span>
@@ -40,6 +42,12 @@
               <?php }
                   wp_reset_query(); 
               ?>
+
+            <?php } else { ?>
+                <div class="no-results">
+                   <p class="">Sorry, no search results found.</p>
+                </div>
+            <?php } ?>
 
 
                 <?php echo paginate_links(); ?>

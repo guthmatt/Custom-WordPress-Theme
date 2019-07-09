@@ -14,3 +14,11 @@ a {
     color: dodgerblue;
 }
 
+#sidebar ul {
+    margin: 0;
+    padding: 20px;
+}
+#sidebar li {
+    list-style: none;
+}
+

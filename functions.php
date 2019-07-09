@@ -20,7 +20,6 @@ function add_theme_scripts() {
 /**
  * add theme support
  */
-
  function cpb_init() {
      add_theme_support( 'post-thumbnails' );
      add_theme_support( 'title-tag' );
@@ -29,3 +28,21 @@ function add_theme_scripts() {
     );
  }
  add_action( 'after_setup_theme', 'cpb_init' );
+
+
+ /**
+ * add sidebar
+ */
+function cpb_widgets() {
+  register_sidebar (
+    array(
+      'name' => 'Main Sidebar',
+      'id' => 'main_sidebar',
+      'before_widget' => '<li class="card my-4">',
+      'after_widget'  => '</li>',
+      'before_title' => '<h5 class="card-header">',
+      'after_title' => '</h5>'
+    )
+    );
+}
+add_action( 'widgets_init', 'cpb_widgets' );
