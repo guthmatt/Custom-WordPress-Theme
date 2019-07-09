@@ -3,8 +3,8 @@
     <div class="jumbotron bg-white jumbotron-fluid">
         <div class="container d-flex flex-column justify-content-center align-items-center">
             <img src="<?php echo get_template_directory_uri(); ?>/img/mkg_headshot.jpg" alt="headshot of mkg" class="rounded-circle mg-fluid img-thumbnail" width="175px" height="175px" >
-            <h1 class="display-4 pt-3">Matt Guthrie</h1>
-            <h3 class="text-muted">Front End Developer</h3>
+            
+            <h1 class="display-4 pt-3">Front End Developer</h1>
             <div class="container">
                     <div class="row align-items-start">
                       <div class="col">
