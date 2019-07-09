@@ -1,0 +1,15 @@
+/*
+Theme Name: mkg custom portfolio
+Author: mkg
+Author URI: https://mkguthrie.com
+Description: Official portfolio of mkg
+Version: 1.0
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: dodgerblue;
+}
