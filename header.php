@@ -17,9 +17,9 @@
             </button>
             <div class="collapse navbar-collapse center-nav-for-desktop justify-content-end" id="navbarNavAltMarkup">
               <div class="navbar-nav">
-                <a class="nav-item nav-link active px-3 border-right" href="<?php echo site_url('/portfolio'); ?>">Portfolio <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link px-3 border-right" href="<?php echo site_url('/blog'); ?>">Blog</a>
-                <a class="nav-item nav-link px-3" href="<?php echo site_url('/now'); ?>">Now</a>
+                <a class="<?php if(get_post_type() == 'portfolio') echo 'active'; ?> nav-item nav-link px-3 border-right" href="<?php echo site_url('/portfolio'); ?>">Portfolio </a>
+                <a class="<?php if(get_post_type() == 'post') echo 'active'; ?> nav-item nav-link px-3 border-right" href="<?php echo site_url('/blog'); ?>">Blog</a>
+                <a class="<?php if (is_page('now')) echo 'active'; ?> nav-item nav-link px-3" href="<?php echo site_url('/now'); ?>">Now</a>
                 </div>
             </div>
         </nav>
