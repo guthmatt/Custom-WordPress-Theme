@@ -29,7 +29,7 @@
             <?php 
             
             $args = array(
-                'post_type' => 'project',
+                'post_type' => 'portfolio',
                 'posts_per_page' => 3,
                 'order'   => 'ASC',
             );
