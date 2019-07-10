@@ -5,7 +5,7 @@
             <img src="<?php echo get_template_directory_uri(); ?>/img/mkg_headshot.jpg" alt="headshot of mkg" class="rounded-circle mg-fluid img-thumbnail" width="175px" height="175px" >
             
             <h1 class="display-4 pt-3">Front End Developer</h1>
-            <div class="container">
+            <div class="">
                     <div class="row align-items-start">
                       <div class="col">
                         
@@ -22,7 +22,7 @@
         </div>
     </div>
     <div class="py-5">
-        <div class="container">
+        <div class="">
             <h3 class="pb-4">Client Work</h3>
             <div class="row">
 
@@ -67,7 +67,7 @@
         </div>
     </div>
     <div class="py-5">
-        <div class="container">
+        <div class="">
             <h3 class="pb-4">Blog Posts</h3>
 
             <?php 

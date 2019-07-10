@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="container my-5">
+<div class="my-5">
     <div>
         <h1><?php the_title(); ?></h1>
         <p class="lead"><?php the_field( "project_excerpt" ); ?></p>

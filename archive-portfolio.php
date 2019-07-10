@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div class="py-5">
-    <div class="container">
+    <div class="">
         <h3 class="pb-4">Client Work</h3>
         <div class="row">
 

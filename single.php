@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="container">
+<div class="">
     <div class="row">    
         <!-- Blog Entries Column -->
         <div class="col-md-8 my-4">
