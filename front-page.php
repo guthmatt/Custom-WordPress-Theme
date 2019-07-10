@@ -10,7 +10,7 @@
                       <div class="col">
                         
                       </div>
-                      <div class="col-sm-12 col-md-8">
+                      <div class="col-sm-12 col-md-10">
                             <p class="lead pt-3">Duis aliquam erat est, ut volutpat urna commodo ullamcorper. Donec tempor, elit quis pellentesque convallis, tellus nunc fermentum enim, vel mollis est lorem id turpis. Duis aliquam erat est, ut volutpat urna commodo ullamcorper. Donec tempor, elit quis pellentesque convallis, tellus nunc fermentum enim, vel mollis est lorem id turpis.</p>
                       </div>
                       <div class="col">
