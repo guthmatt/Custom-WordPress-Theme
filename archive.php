@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div class="py-5">
-    <div class="container">
+    <div class="">
         <h3 class="pb-4"><?php the_archive_title(); ?></h3>
         <div class="row">
             <div class="col">
