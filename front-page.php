@@ -47,7 +47,6 @@
                     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" alt="portfolio-image" class="border-bottom" width="100%" height="225">
                         <div class="card-body">
                             <a href="<?php the_permalink(); ?>"><h4 class="portfolio-title"><?php the_title(); ?></h4></a>
-                            <p class="portfolio-text"><?php the_field( "project_excerpt" ); ?></p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <a href="<?php the_permalink(); ?>" class="btn btn-sm btn-outline-secondary">View</a>
@@ -92,7 +91,6 @@
                     <div class="mb-4">
                         <div class="">
                             <a href="<?php the_permalink(); ?>"><h4 class=""><?php the_title(); ?></h4></a>
-                            <p class=""><?php echo wp_trim_words(get_the_excerpt(), 30); ?></p>
                         </div>
                     </div>
                 </div>
